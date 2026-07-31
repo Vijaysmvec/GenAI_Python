@@ -1,0 +1,305 @@
+What is OOP?
+
+OOP (Object-Oriented Programming) is a way of writing programs using classes and objects.
+
+Think of a class as a blueprint and an object as the real thing.
+
+Example:
+
+Class → Car
+Object → My Honda City
+1. Encapsulation (Data Hiding)
+Meaning
+
+Encapsulation means keeping data safe by hiding it and allowing access only through methods.
+
+Example
+class Bank:
+
+    def __init__(self):
+        self.__balance = 1000
+
+    def show_balance(self):
+        print("Balance:", self.__balance)
+
+bank = Bank()
+bank.show_balance()
+Line-by-line explanation
+class Bank:
+
+Creates a class named Bank.
+
+def __init__(self):
+
+Constructor.
+
+Runs automatically when an object is created.
+
+self.__balance = 1000
+
+Creates a private variable.
+
+Only methods inside the class should use it.
+
+def show_balance(self):
+
+Creates a method.
+
+print("Balance:", self.__balance)
+
+Prints the private balance.
+
+bank = Bank()
+
+Creates an object.
+
+Python automatically calls
+
+__init__()
+bank.show_balance()
+
+Calls the method.
+
+Output
+
+Balance: 1000
+Why is this encapsulation?
+
+Because the user cannot directly access
+
+bank.__balance
+
+The balance is hidden.
+
+2. Abstraction (Hide Implementation)
+Meaning
+
+Abstraction means
+
+Show what to do, but hide how it is done.
+
+Example:
+
+When you use an ATM,
+
+You press
+
+Withdraw
+
+You don't know
+
+SQL queries
+Server communication
+Security checks
+
+Those details are hidden.
+
+Example
+from abc import ABC, abstractmethod
+
+class ATM(ABC):
+
+    @abstractmethod
+    def withdraw(self):
+        pass
+
+
+class SBI(ATM):
+
+    def withdraw(self):
+        print("Money Withdrawn")
+
+
+atm = SBI()
+atm.withdraw()
+Line-by-line explanation
+from abc import ABC, abstractmethod
+
+Imports Python's abstract class tools.
+
+class ATM(ABC):
+
+Creates an abstract class.
+
+@abstractmethod
+
+Means
+
+Every child class must implement this method.
+
+def withdraw(self):
+    pass
+
+Only declares the method.
+
+No implementation.
+
+class SBI(ATM):
+
+Creates a child class.
+
+def withdraw(self):
+
+Implements the method.
+
+print("Money Withdrawn")
+
+Actual implementation.
+
+atm = SBI()
+
+Creates an object.
+
+atm.withdraw()
+
+Output
+
+Money Withdrawn
+Why is this abstraction?
+
+The parent class says
+
+Every ATM must withdraw money.
+
+But doesn't explain how.
+
+The child class decides how.
+
+3. Inheritance (Reuse Code)
+Meaning
+
+One class can use another class's features.
+
+Example
+class Animal:
+
+    def eat(self):
+        print("Animal is eating")
+
+
+class Dog(Animal):
+    pass
+
+
+dog = Dog()
+dog.eat()
+Line-by-line explanation
+class Animal:
+
+Parent class.
+
+def eat(self):
+
+Method inside Animal.
+
+class Dog(Animal):
+
+Dog inherits from Animal.
+
+pass
+
+Nothing new added.
+
+dog = Dog()
+
+Creates Dog object.
+
+dog.eat()
+
+Output
+
+Animal is eating
+
+Even though Dog doesn't have eat(), it inherited it.
+
+Why is this inheritance?
+
+Because
+
+Dog
+      ↑
+inherits
+      ↑
+Animal
+4. Polymorphism (One Name, Many Behaviors)
+Meaning
+
+Same method name.
+
+Different outputs.
+
+Example
+class SBI:
+
+    def welcome(self):
+        print("Welcome to SBI")
+
+
+class HDFC:
+
+    def welcome(self):
+        print("Welcome to HDFC")
+
+
+banks = [SBI(), HDFC()]
+
+for bank in banks:
+    bank.welcome()
+Line-by-line explanation
+class SBI:
+
+Creates SBI class.
+
+def welcome(self):
+
+Method named welcome().
+
+print("Welcome to SBI")
+
+SBI version.
+
+class HDFC:
+
+Creates another class.
+
+def welcome(self):
+
+Same method name.
+
+Different implementation.
+
+banks = [SBI(), HDFC()]
+
+Creates two objects.
+
+for bank in banks:
+
+Loops through each object.
+
+bank.welcome()
+
+Python automatically calls the correct version.
+
+Output
+
+Welcome to SBI
+Welcome to HDFC
+Why is this polymorphism?
+
+The method name is always
+
+welcome()
+
+But the behavior changes depending on the object.
+
+Easy Way to Remember
+Pillar	Meaning	Example
+Encapsulation	Hide data	Private balance (__balance)
+Abstraction	Hide implementation	ATM withdraw()
+Inheritance	Reuse code	Dog inherits Animal
+Polymorphism	Same method, different behavior	welcome() in SBI and HDFC
+One-line Memory Trick
+🔒 Encapsulation → Hide the data.
+🎭 Abstraction → Hide how it works.
+👨‍👩‍👦 Inheritance → Reuse code from another class.
+🔄 Polymorphism → Same method name, different behavior.

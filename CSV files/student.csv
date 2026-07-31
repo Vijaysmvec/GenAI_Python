@@ -1,0 +1,10 @@
+Name,Age,Subject,Salary,Marks,Location,Location,id
+Vijay,,Python,400000,90,Chennai,Chennai,1
+Sanjay,14,Maths,350000,85,Cuddalore,Cuddalore,2
+Varsha,21,Networking,300000,95,Chennai,Chennai,3
+Goku,20,Science,100000,60,Bangalore,Bangalore,4
+Vegeta,21,Social,40000,77,Bangalore,Bangalore,5
+Arun,19,Maths,100000,88,Cuddalore,Cuddalore,6
+Arjun,22,Accountent,200000,78,Bangalore,Bangalore,7
+Sanjay,14,Maths,350000,85,Cuddalore,Cuddalore,8
+Vegeta,21,Social,40000,77,Bangalore,Bangalore,9
